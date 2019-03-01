@@ -1,4 +1,13 @@
 <h1>Crear un post</h1>
+
+<% if @post.errors.any? %>
+<% @post.errors.full_messages.each do |mensaje| %>
+  <ul>
+    <li><%= mensaje %></li> 
+    <% end %>
+  </ul>
+<% end %>
+
 <%= form_for @post do |f| %>
   <p>
     <%= f.label :titulo %><br/>
