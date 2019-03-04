@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :set_post, only: [:edit, :update, :show, :destroy]
   def new #inicializar articulo
     @post = Post.new
   end
@@ -8,11 +9,11 @@ class PostsController < ApplicationController
   end
   
   def edit
-    @post = Post.find(params[:id])
+
   end
   
   def update
-    @post = Post.find(params[:id]) #primero localizar el articulo
+ #primero localizar el articulo
     if @post.update(post_params)
       flash[:notice] = "El post se actualiza satisfactoriamente"
       redirect_to post_path(@post) 
@@ -35,11 +36,11 @@ class PostsController < ApplicationController
   end
   
   def show
-    @post = Post.find(params[:id]) #aqui mostramos el id    
+  #aqui mostramos el id    
   end
   
   def destroy
-    @post = Post.find(params[:id]) #encontrar el articulo para eliminar
+     #encontrar el articulo para eliminar
     @post.destroy
     
     redirect_to posts_path
@@ -48,6 +49,10 @@ class PostsController < ApplicationController
   end
   
   private
+    def set_post
+      @post = Post.find(params[:id])
+    end
+  
     def post_params
       params.require(:post).permit(:titulo, :descripcion)
     end
