@@ -1,0 +1,23 @@
+<% if @post.errors.any? %>
+<% @post.errors.full_messages.each do |mensaje| %>
+  <ul>
+    <li><%= mensaje %></li> 
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @post do |f| %>
+  <p>
+    <%= f.label :titulo %><br/>
+    <%= f.text_field :titulo %>
+  </p>
+  <p>
+    <%= f.label :descripcion %><br/>
+    <%= f.text_area :descripcion %>  
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+<%= link_to "Ir a indice de posts", posts_path %>

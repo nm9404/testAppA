@@ -5,7 +5,6 @@ class PostsController < ApplicationController
   
   def index
     @posts = Post.all #obtener todos los articulos
-    
   end
   
   def edit
@@ -37,6 +36,15 @@ class PostsController < ApplicationController
   
   def show
     @post = Post.find(params[:id]) #aqui mostramos el id    
+  end
+  
+  def destroy
+    @post = Post.find(params[:id]) #encontrar el articulo para eliminar
+    @post.destroy
+    
+    redirect_to posts_path
+    
+    flash[:notice] = "El post se elimina satisfactoriamente"
   end
   
   private

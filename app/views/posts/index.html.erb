@@ -18,6 +18,7 @@
       <td> <%= post.descripcion %></td>
       <td> <%= link_to "Editar", edit_post_path(post.id) %> </td>
       <td> <%= link_to "Mostrar", post_path(post) %> </td>
+      <td> <%= link_to "Eliminar articulo", post_path(post), method: :delete, data: {confirm: "Seguro?"} %></td>
     </tr>
   <% end %>
 </table>
