@@ -9,3 +9,6 @@
 <p>
   Descripcion: <%= @post.descripcion %>
 </p>
+
+<%= link_to "Editar este articulo", edit_post_path(@post.id) %> |
+<%= link_to "Ir a indice de posts", posts_path %>
