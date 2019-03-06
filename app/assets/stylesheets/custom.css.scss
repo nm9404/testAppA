@@ -16,7 +16,7 @@ $jumbotron-bg: #FFFFFF;
 
 .center {
   text-align: center;
-  background-color: "#ffffff"
+  background-color: "#ffffff";
 }
 
 .btn{
@@ -27,6 +27,16 @@ $jumbotron-bg: #FFFFFF;
 .well {
   border: none;
   border-radius: 0;
+}
+
+.titulo-post {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.cuerpo-post{
+    padding-top: 8px;
+    padding-bottom: 15px;
 }
 
 .footer ul {

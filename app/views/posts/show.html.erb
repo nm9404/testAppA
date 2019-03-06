@@ -8,7 +8,7 @@
     <h4 class = "center description"><strong>Descripcion:</strong></h4>
         <hr>
         Descripcion: <%= simple_format(@post.descripcion) %>
-            <div class = "article-actions">
+            <div class = "acciones-post">
                 <%= link_to "Editar este articulo", edit_post_path(@post.id), class: "btn btn-xs btn-primary" %>
                 <%= link_to "Ir a indice de posts", posts_path, class: "btn btn-xs btn-success" %>
                 <%= link_to "Eliminar articulo", post_path(@post), method: :delete, 
