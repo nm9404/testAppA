@@ -1,14 +1,18 @@
-<h1>
-  Mostrando articulo seleccionado
-</h1>
 
-<p>
-  Titulo: <%= @post.titulo %>
-</p>
 
-<p>
-  Descripcion: <%= @post.descripcion %>
-</p>
 
-<%= link_to "Editar este articulo", edit_post_path(@post.id) %> |
-<%= link_to "Ir a indice de posts", posts_path %>
+<h2 align="center">  Titulo: <%= @post.titulo %> </h2>
+
+
+<div class = "well col-xs-8 col-xs-offset-2">
+    <h4 class = "center description"><strong>Descripcion:</strong></h4>
+        <hr>
+        Descripcion: <%= simple_format(@post.descripcion) %>
+            <div class = "article-actions">
+                <%= link_to "Editar este articulo", edit_post_path(@post.id), class: "btn btn-xs btn-primary" %>
+                <%= link_to "Ir a indice de posts", posts_path, class: "btn btn-xs btn-success" %>
+                <%= link_to "Eliminar articulo", post_path(@post), method: :delete, 
+                                                        data: {confirm: "Seguro?"}, 
+                                                        class: "btn btn-xs btn-danger" %>
+            </div>
+</div>

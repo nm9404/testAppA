@@ -1,14 +1,8 @@
-<% if @post.errors.any? %>
-<% @post.errors.full_messages.each do |mensaje| %>
-  <ul>
-    <li><%= mensaje %></li> 
-    <% end %>
-  </ul>
-<% end %>
+<%= render "shared/errors", obj: @post %>
 
 <div class="row">
+  <%= form_for @post do |f| %>
   <div class="col-xs-12">
-    <%= form_for @post do |f| %>
       <div class="form_group">
         <div class="control-label col-sm-2">
           <%= f.label :titulo %>
@@ -26,15 +20,14 @@
           </div>
         </div>
     </div>
-    <div class="form_group">
-      <div class="col-sm-10">
-        <%= f.submit class: "btn btn-primary btn-lg" %>
+    <div class="col-sm-10">
+      <div class="form-group">
+            <%= f.submit class: "btn btn-primary btn-lg" %>
       </div>
     </div>
     <% end %>
 
-    <%= link_to "Ir a indice de posts", posts_path %>
-    
-  </div>
+    <%= link_to "Ir a indice de posts", posts_path %>    
 </div>
+
 

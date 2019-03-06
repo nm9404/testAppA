@@ -15,7 +15,7 @@ class PostsController < ApplicationController
   def update
  #primero localizar el articulo
     if @post.update(post_params)
-      flash[:notice] = "El post se actualiza satisfactoriamente"
+      flash[:success] = "El post se actualiza satisfactoriamente"
       redirect_to post_path(@post) 
       #render 'new'
     else
@@ -27,7 +27,7 @@ class PostsController < ApplicationController
     #render plain: params[:post].inspect
     @post = Post.new(post_params)
     if @post.save
-      flash[:notice] = "El post se creo satisfactoriamente"
+      flash[:success] = "El post se creo satisfactoriamente"
       redirect_to post_path(@post) 
       #render 'new'
     else
@@ -45,7 +45,7 @@ class PostsController < ApplicationController
     
     redirect_to posts_path
     
-    flash[:notice] = "El post se elimina satisfactoriamente"
+    flash[:danger] = "El post se elimina satisfactoriamente"
   end
   
   private

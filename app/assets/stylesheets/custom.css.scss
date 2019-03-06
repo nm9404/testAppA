@@ -19,7 +19,12 @@ $jumbotron-bg: #FFFFFF;
   background-color: "#ffffff"
 }
 
-.btn-primary {
+.btn{
+  border: none;
+  border-radius: 0;
+}
+
+.well {
   border: none;
   border-radius: 0;
 }
